@@ -18,8 +18,9 @@ def test_list_item_multiply(my_list):  # Recebemos a mesma fixture aqui também
     assert [item * 3 for item in my_list] == [3, 6, 9]
 
 
-# Sim, é só receber `capsys` como parâmetro em qualquer função de teste que o
-# pytest faz o resto da magia acontecer
+# capsys
+
+
 def test_print_to_stdout(capsys):
     print("Hello, world!")
     captured = capsys.readouterr()
@@ -32,3 +33,22 @@ def test_error_to_stderr(capsys):
     sys.stderr.write("Error message\n")
     captured = capsys.readouterr()
     assert captured.err == "Error message\n"
+
+
+# monkeypatch
+
+
+def my_function():
+    return f"Você digitou {input('Digite algo: ')}!"
+
+
+def test_my_function(monkeypatch):
+    # Input recebe um parâmetro que mock_input não usa, por isso o _
+    def mock_input(_):
+        return "Python"
+
+    # Trocamos a input do sistema pela nossa mock_input
+    monkeypatch.setattr("builtins.input", mock_input)
+    output = my_function()
+
+    assert output == "Você digitou Python!"
