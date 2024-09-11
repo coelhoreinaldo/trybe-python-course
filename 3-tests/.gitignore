@@ -1,0 +1,64 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+.venv/
+venv/
+env/
+ENV/
+.virtualenv/
+*.virtualenv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Install logs
+pip-log.txt
+
+# Test-related files
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# MyPy type-checking
+.mypy_cache/
+
+# Pyre type checker
+.pyre/
+
+# Pyright static type checker
+.pyright/
+
+# Pylint, Flake8, Bandit, and other linter reports
+.pylint.d/
+flake8.log
+bandit.log
+
+# Unit test / coverage results
+htmlcov/
+.tox/
+.nox/
+pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
