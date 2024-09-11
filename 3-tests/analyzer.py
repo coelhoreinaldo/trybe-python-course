@@ -7,9 +7,9 @@ def read_json_file(file_path):
         return json.load(file)
 
 
-def analyze_json_file(file_path) -> str:
+def analyze_json_file(file_path):
     if not file_path.endswith(".json"):
         raise ValueError("O arquivo precisa ser um arquivo JSON.")
 
     data = read_json_file(file_path)
-    return f"A pessoa de nome {data['nome']} " f"tem {data['idade']} anos de idade."
+    return f"A pessoa de nome {data['nome']} " f"possui {data['idade']} anos de idade."
