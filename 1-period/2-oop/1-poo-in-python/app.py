@@ -7,3 +7,11 @@ class Person:
         self.name = name
         self.age = age
         self.height = height
+
+
+class Database:
+    pass
+
+
+database_1 = Database()
+database_2 = Database()
