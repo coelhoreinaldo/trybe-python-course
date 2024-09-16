@@ -20,3 +20,27 @@ animals = ["cachorro", "gato", "elefante", "girafa"]
 char = "g"
 
 find_str(animals, char)
+
+# Exercício 3
+# Escreva uma classe que representa um livro com título, autor e número de páginas e altere o método __str__ para uma string que descreve o livro.
+
+
+class Book:
+    title: str
+    author: str
+    pages: int
+
+    def __init__(self, title: str, author: str, pages: int) -> None:
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+    def __str__(self) -> str:
+        return (
+            f"Title: {self.title}, author: {self.author}. Number of pages: {self.pages}"
+        )
+
+
+book = Book("title", "author", 60)
+
+print(book)
