@@ -44,3 +44,38 @@ class Book:
 book = Book("title", "author", 60)
 
 print(book)
+
+# Exercício 4
+# Escreva uma classe que representa um carro com modelo, ano e velocidade e tem métodos que aceleram e desaceleram sua velocidade, e mostre uma mensagem com o modelo, ano e o valor da aceleração ou desaceleração.
+
+
+class Car:
+    model: str
+    year: int
+    speed: int
+
+    def __init__(self, model: str, year: int, speed: int) -> None:
+        self.model = model
+        self.year = year
+        self.speed = speed
+
+    def accelerate(self, amount: int = 1):
+        self.speed += amount
+        print(f"The car {self.model} accelerated {amount} km/h")
+
+    def decelerate(self, amount: int = 1):
+        self.speed -= amount
+        print(f"The car {self.model} decelerated {amount} km/h")
+
+    def __str__(self) -> str:
+        return f"Model: {self.model}, year: {self.year}. Speed: {self.speed}"
+
+
+car_1 = Car("Fusca", 1970, 0)
+
+car_1.accelerate(4)
+car_1.accelerate(4)
+car_1.accelerate(4)
+car_1.decelerate(2)
+
+print(car_1)
