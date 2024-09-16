@@ -1,3 +1,6 @@
+from typing import Optional, Union
+
+
 def add_two_numbers(num1: int, num2: int) -> int:
     return num1 + num2
 
@@ -9,12 +12,51 @@ class Person:
         self.height = height
 
 
+"""
+>>> Database(
+...     dialect = "",
+...     user = "",
+...     host = "",
+...     password = "",
+...     database = "",
+... )
+Traceback (most recent call last):
+...
+ValueError: invalid default `port` for unrecognized `dialect`
+
+>>> print(Database(
+...     dialect = "postgres",
+...     user = "tryber",
+...     host = "trybe",
+...     password = "i_love_python",
+...     database = "computer_science",
+... ).connection_url)
+postgres://tryber:i_love_python@trybe:5432/computer_science
+"""
+
+
 class Database:
-    pass
+    def __init__(
+        self,
+        dialect: str,
+        user: str,
+        host: str,
+        password: str,
+        database: str,
+        port: Optional[Union[str, int]],
+    ) -> None:
+        self.connection_url = f"{dialect}://{user}:{password}@{host}:{port}/{database}"
 
 
-database_1 = Database()
-database_2 = Database()
+database_1 = Database(
+    dialect="dialect",
+    user="user",
+    host="host",
+    password="password",
+    database="database",
+    port=5432,
+)
+print(database_1.connection_url)
 
 
 class Car:
