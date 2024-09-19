@@ -11,13 +11,13 @@ class Vehicle:
 
 class Car(Vehicle):
     def move(self, distance: int) -> str:
-        return super().move(distance)
+        return f"Car {super().move(distance)}"
 
 
 class Motorcycle(Vehicle):
-    def __init__(self, name: str, capacity: int) -> None:
-        super().__init__(name, capacity)
-        self.capacity = 3
+    def __init__(self, name: str) -> None:
+        self.name = name
+        self.capacity = 2
 
     def move(self, distance: int) -> str:
         return super().move(distance)
@@ -26,5 +26,5 @@ class Motorcycle(Vehicle):
 car = Car("Car", 5)
 print(car.move(100))
 
-motorcycle = Motorcycle("Motorcycle", 2)
+motorcycle = Motorcycle("Motorcycle")
 print(motorcycle.move(100))
