@@ -22,7 +22,7 @@ This repository contains the projects and exercises [I](https://www.linkedin.com
 - [ ] 2-1: _POO em Python_
 - [ ] 2-2: _Exercícios_
 - [ ] 2-3: _Pilares da POO_
-- [ ] 2-4: _Classes Abstratas_
+- [ ] 2-4: _Classes abstratas, interfaces e protocolos_
 - [ ] 2-5: _[Projeto - Inventory Report](#)_
 
 ##### Bloco 3: Raspagem de dados
