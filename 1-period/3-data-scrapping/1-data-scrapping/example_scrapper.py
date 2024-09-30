@@ -8,10 +8,12 @@ while next_page_url:
     response = requests.get(URL_BASE + next_page_url)
     selector = Selector(text=response.text)
     for product in selector.css(".product_pod"):
+        # Get the title and price of the book
         # title = product.css("h3 a::attr(title)").get()
         # price = product.css(".price_color::text").get()
         # print(title, price)
 
+        # Get the details of the book
         detail_href = product.css("h3 a::attr(href)").get() or ""
         detail_page_url = URL_BASE + detail_href
 
