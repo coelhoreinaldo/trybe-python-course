@@ -10,6 +10,7 @@ while next_page_url:
     for product in selector.css(".product_pod"):
         # Get the title and price of the book
         # title = product.css("h3 a::attr(title)").get()
+        price = product.css(".product_price .price_color::text").re(r"£\d+\.\d{2}")
         # price = product.css(".price_color::text").get()
         # print(title, price)
 
@@ -21,6 +22,11 @@ while next_page_url:
         detail_selector = Selector(text=detail_response.text)
 
         description = detail_selector.css("#product_description ~ p::text").get()
+        suffix = "...more"
+
+        if description and description.endswith(suffix):
+            description = description[: -len(suffix)]
+
         print(description)
 
     next_page_url = selector.css(".next a::attr(href)").get()
