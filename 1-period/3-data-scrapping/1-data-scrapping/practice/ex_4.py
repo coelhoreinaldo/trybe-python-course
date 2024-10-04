@@ -2,7 +2,7 @@ from parsel import Selector
 import requests
 
 URL_BASE = "http://books.toscrape.com/catalogue/"
-response = requests.get(URL_BASE + "the-grand-design_405/index.html")
+response = requests.get(URL_BASE + "a-light-in-the-attic_1000/index.html")
 selector = Selector(text=response.text)
 
 name = selector.css(".product_main h1::text").get()
@@ -15,6 +15,8 @@ suffix = "...more"
 if description and description.endswith(suffix):
     description = description[: -len(suffix)]
 
-result = f"{name}, {price}, {description}. {image_url}"
+available_books = selector.css(".instock.availability").re_first(r"\d+")
+
+result = f"{name}, {price}, {description}. {image_url}, {available_books}."
 
 print(result)
