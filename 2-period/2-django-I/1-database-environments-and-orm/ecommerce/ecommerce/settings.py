@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "products",
 ]
 
 MIDDLEWARE = [
@@ -75,14 +76,14 @@ WSGI_APPLICATION = "ecommerce.wsgi.application"
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecommerce_database',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        }
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "ecommerce_database",
+        "USER": "root",
+        "PASSWORD": "password",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
+    }
 }
 
 # Password validation
